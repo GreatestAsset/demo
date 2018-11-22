@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>穿透式现金监管平台</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <script rel="script" src="script/jquery-3.3.1.min.js" type="application/javascript"></script>
+
+</head>
+
+<style>
+    #web_bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-width: 1000px;
+        z-index: -10;
+        zoom: 1;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-position: center 0;
+    }
+
+    img {
+        margin: 0 auto;
+        margin-top: 10%;
+        margin-bottom: 50px;
+    }
+
+    @font-face {
+        font-style: normal;
+        font-family: 'FZHanZhenGuangBiao';
+        font-weight: 400;
+        src: local('FZHanZhenGuangBiaoS-GB'), url('./fonts/roboto/FZHZGBJW.woff2') format('woff2'), url('https://free.modao.cc/fonts/fangzheng/FZHZGBJW.woff2') format('woff');
+    }
+    #sys-title {
+        font-family: FZHanZhenGuangBiao;
+        font-weight: 400;
+        font-size: 36px;
+        color: rgb(77, 77, 77);
+        font-style: normal;
+        letter-spacing: 0px;
+        line-height: 44px;
+        text-decoration: none;
+    }
+</style>
+<body>
+<div id="web_bg" style="background-image: url(./img/login_background.jpeg);"></div>
+<div id="login">
+    <img src="./img/logo.jpg" draggable="false" style="display: block; height: auto;" height="109.08" width="95.41"/>
+    <span id="sys-title" style="margin-bottom: 50px;">穿透式现金监管平台</span>
+    <div style="margin-top: 50px">
+        <input type="text" placeholder="账户名" class="form-control" style="width: 350px;
+    margin: 7px auto;"/>
+        <input type="password" placeholder="账户密码" class="form-control" style="width: 350px;
+    margin: 7px auto;"/>
+        <button type="button" class="btn btn-danger" style="width: 350px;" onclick="login()">登陆</button>
+    </div>
+</div>
+<div id="login-ok" style="display: none;">
+    <img id="ok-login" src="./img/login_ok.png" alt="登陆成功" style="display: block;" class="animated shake">
+    <span id="login-text" style="font-size: 21px; color: green; font-weight: bold; display: none;" class="animated bounceIn">登陆成功</span>
+</div>
+</body>
+<script type="application/javascript">
+    function login() {
+        $('#login').hide();
+        $('#login-ok').show();
+        setTimeout(function () {
+            $('#login-text').addClass('animated bounceIn');
+            $('#login-text').show();
+        }, 500);
+        setTimeout(function () {
+            window.location.href='./index.html';
+        }, 1200);
+    }
+</script>
+</html>
