@@ -1,2 +1,2 @@
 # demo
-ct-demo
+ct-demo test
