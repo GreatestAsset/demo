@@ -2,15 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>布局页面</title>
-    <frameset rows="10%,90%" frameborder="no">
-        <frame src="frame_a.html">
-        <frameset cols="25%,*">
-            <frame src="frame_b.html">
-            <frame src="frame_c.html" name="main" id="main" title="mainFrame" >
-        </frameset>
-    </frameset>
+    <title>穿透式现金监管平台</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css"/>
 </head>
-<body>
+<body style="background:#f2f1f4">
+<iframe src="top.html" width="100%" height="80px" scrolling="none" frameborder="none"></iframe>
+<iframe src="left.html" width="20%" height="100%" style="float: left;" scrolling="none" frameborder="none"></iframe>
 </body>
 </html>
