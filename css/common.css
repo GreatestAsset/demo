@@ -1,0 +1,15 @@
+.main-content {
+    height: 100%;
+    margin-left: 230px;
+    margin-top: 20px;
+    border-color: rgb(224, 224, 224);
+    background: rgb(255, 255, 255);
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.block-main {
+    height: 350px;
+    margin: 10px;
+    border: 1px rgb(224, 224, 224) solid;
+}

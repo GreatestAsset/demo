@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <title>内容</title>
     <link rel="stylesheet" href="css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <style>
+        * {
+            color: rgb(112, 112, 112);
+            font-size: 20px;
+        }
+
+        li {
+            line-height: 35px;
+        }
+
+        .menu-ch {
+            padding-left: 87px;
+            cursor: pointer;
+        }
+
+        .menu-hr {
+            border: 1px rgb(224, 224, 224) solid;
+        }
+    </style>
 </head>
-<body style="background: red; height: 100px; width: 50px">
-<a href="./ceshi.html" target="main" runat="server" id="A17" style="color: #0a3f51;">首页背景音乐</a>
+<body style="background: rgb(247, 247, 247);">
+<div id="menu">
+    <ul>
+        <li style="padding-left: 47px; padding-top: 10px"><span class="icon fa fa-pie-chart"
+                                                                style="font-size: 20px;"></span><span> 业务统计</span></li>
+        <li class="menu-ch clearLog" id="clearLog"><span>清分日志</span></li>
+        <li class="menu-ch"><span>柜面收支</span></li>
+        <li class="menu-ch"><span>自助收支</span></li>
+        <li class="menu-ch"><span>现金调拨</span></li>
+    </ul>
+    <hr class="menu-hr"/>
+    <ul>
+        <li style="padding-left: 47px;"><span class="icon fa fa-search"
+                                              style="font-size: 20px;"></span><span> 监管查询</span></li>
+        <li class="menu-ch"><span>坐支分析</span></li>
+        <li class="menu-ch"><span>全额清分</span></li>
+        <li class="menu-ch"><span>可疑账户</span></li>
+        <li class="menu-ch"><span>冠号跟踪</span></li>
+    </ul>
+    <hr class="menu-hr"/>
+    <ul>
+        <li style="padding-left: 47px;"><span class="icon fa fa-link"
+                                              style="font-size: 20px;"></span><span> 区块链系统</span>
+        </li>
+        <li class="menu-ch"><span>系统状态</span></li>
+        <li class="menu-ch"><span>区块信息</span></li>
+        <li class="menu-ch"><span>智能合约</span></li>
+    </ul>
+    <hr class="menu-hr"/>
+    <ul>
+        <li style="padding-left: 47px;"><span class="icon fa fa-folder"
+                                              style="font-size: 20px;"></span><span> IPFS文件系统</span></li>
+        <li class="menu-ch"><span>系统状态</span></li>
+        <li class="menu-ch"><span>文件信息</span></li>
+    </ul>
+
+</div>
+
 </body>
 </html>

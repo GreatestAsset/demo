@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>穿透式现金监管平台</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <script rel="script" src="script/jquery-3.3.1.min.js" type="application/javascript"></script>
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+
+        .today-one:before {
+            content: "";
+            height: 90px;
+            width: 1px;
+            border: 0.3px rgb(224, 224, 224) solid;
+            float: right;
+            position: relative;
+            right: 60px;
+        }
+    </style>
+    <script type="application/javascript">
+        // iframe大小自动适应
+        function changeFrameHeight() {
+            let ifm = document.getElementById("left");
+            ifm.height = document.documentElement.clientHeight - 120;
+        }
+
+        window.onresize = function () {
+            changeFrameHeight();
+        };
+        window.onload = function(){
+            var dom = document.getElementById('left').contentWindow.document.getElementById('clearLog');
+            dom.style.background = 'rgb(245, 93, 84)';
+        }
+    </script>
+</head>
+<body style="background:#f2f1f4">
+<iframe src="top.html" width="100%" height="80px" scrolling="none" frameborder="none"></iframe>
+<iframe src="left.html" id="left"
+        style="float: left; margin-top: 20px; margin-left: 20px; margin-right: 20px; border-color: rgb(224, 224, 224);"
+        frameborder="0" width="200" onload="changeFrameHeight()"></iframe>
+<div class="main-content">
+    <div style="padding: 5px; height: 100%;">
+        <p style="margin: 10px 20px;"><span style="font-size: 20px;color: rgb(112, 112, 112);">清分日志</span></p>
+        <span style="font-weight: 700; margin-left: 30px; font-size: 18px;">辖内所有银行</span>
+        <select class="form-control" style="width: 350px; display: inline; height: 26px; margin-left: 20%;">
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+        </select>
+    </div>
+    <div class="block-main">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">今日核心指标</span>
+                <span class="icon fa fa-info-circle" style="font-size: 24px;float:right; margin-right: 40px;"></span>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-offset-1 col-md-3 today-one">
+                <p style="font-size: 20px;"><span>完整卷总金额</span></p>
+                <p style="margin-top: 30px; margin-left: 20px; font-size: 30px;"><span>1000</span></p>
+            </div>
+
+            <div class="col-md-4 today-one">
+                <p style="font-size: 20px;"><span>残损卷总金额</span></p>
+                <p style="margin-top: 30px; margin-left: 20px; font-size: 30px;"><span>1000</span></p>
+            </div>
+            <div class="col-md-3">
+                <p style="font-size: 20px;"><span>其他卷总金额</span></p>
+                <p style="margin-top: 30px; margin-left: 20px; font-size: 30px;"><span>1</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="block-main" style="height: 78px;">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">7日核心指标</span>
+                <span class="icon fa fa-chevron-circle-up" style="font-size: 24px;float:right; margin-right: 40px;"></span>
+            </div>
+        </div>
+    </div>
+    <div class="block-main" style="height: 78px;">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">15日核心指标</span>
+                <span class="icon fa fa-chevron-circle-up" style="font-size: 24px;float:right; margin-right: 40px;"></span>
+            </div>
+        </div>
+    </div>
+    <div class="block-main" style="height: 78px;">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">30日核心指标</span>
+                <span class="icon fa fa-chevron-circle-up" style="font-size: 24px;float:right; margin-right: 40px;"></span>
+            </div>
+        </div>
+    </div>
+    <div class="block-main">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">2017年3月18日至2017年4月18</span>
+                <span style="font-size: 24px;float:right; margin-right: 40px;">
+                    <button type="button" class="btn btn-link">（链接）Link</button>
+                </span>
+                <span style="font-size: 24px;float:right; margin-right: 40px;">
+                    <button type="button" class="btn btn-link">（链接）Link</button>
+                </span>
+                <span style="font-size: 24px;float:right; margin-right: 40px;">
+                    <button type="button" class="btn btn-link">（链接）Link</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
