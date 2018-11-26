@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>穿透式现金监管平台</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <script rel="script" src="script/jquery-3.3.1.min.js" type="application/javascript"></script>
+    <script src="script/echarts.js"></script>
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        .today-one:before {
+            content: "";
+            height: 90px;
+            width: 1px;
+            border: 0.3px rgb(224, 224, 224) solid;
+            float: right;
+            position: relative;
+            right: 60px;
+        }
+    </style>
+    <script type="application/javascript">
+        // iframe大小自动适应
+        function changeFrameHeight() {
+            let ifm = document.getElementById("left");
+            ifm.height = document.documentElement.clientHeight - 120;
+            document.getElementById('content').style.height = ifm.height + 'px';
+        }
+
+        window.onresize = function () {
+            changeFrameHeight();
+        };
+        window.onload = function () {
+            var dom = document.getElementById('left').contentWindow.document.getElementById('ipfsSystemInfo');
+            dom.style.background = 'rgb(245, 93, 84)';
+        };
+    </script>
+</head>
+<body style="background:#f2f1f4">
+<iframe src="top.html" width="100%" height="80px" scrolling="none" frameborder="none"></iframe>
+<iframe src="left.html" id="left"
+        style="float: left; margin-top: 20px; margin-left: 20px; margin-right: 20px; border-color: rgb(224, 224, 224);"
+        frameborder="0" width="200" onload="changeFrameHeight()"></iframe>
+<div class="main-content" id="content">
+    <div style="padding: 5px;">
+        <p style="margin: 10px 20px;"><span style="font-size: 20px;color: rgb(112, 112, 112);">IPFS文件系统状态</span></p>
+        <hr>
+    </div>
+    <p style="margin-left: 11%">
+        <span style="margin-right: 70px; font-weight: 700;">本节点ID:</span>
+        <span>12312312312312</span>
+    </p>
+    <p style="margin-left: 11%">
+        <span style="margin-right: 30px; font-weight: 700;">本节点剩余容量:</span>
+        <span>100G</span>
+    </p>
+    <p style="margin-left: 11%">
+        <span style="margin-right: 58px; font-weight: 700; width: 300px;">本节点状态:</span>
+        <span>正常</span>
+    </p>
+</div>
+</body>
+</html>

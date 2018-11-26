@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>穿透式现金监管平台</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <script rel="script" src="script/jquery-3.3.1.min.js" type="application/javascript"></script>
+    <script src="script/echarts.js"></script>
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        .today-one:before {
+            content: "";
+            height: 90px;
+            width: 1px;
+            border: 0.3px rgb(224, 224, 224) solid;
+            float: right;
+            position: relative;
+            right: 60px;
+        }
+    </style>
+    <script type="application/javascript">
+        // iframe大小自动适应
+        function changeFrameHeight() {
+            let ifm = document.getElementById("left");
+            ifm.height = document.documentElement.clientHeight - 120;
+            document.getElementById('content').style.height = ifm.height + 'px';
+        }
+
+        window.onresize = function () {
+            changeFrameHeight();
+        };
+        window.onload = function () {
+            var dom = document.getElementById('left').contentWindow.document.getElementById('contract');
+            dom.style.background = 'rgb(245, 93, 84)';
+        };
+    </script>
+</head>
+<body style="background:#f2f1f4">
+<iframe src="top.html" width="100%" height="80px" scrolling="none" frameborder="none"></iframe>
+<iframe src="left.html" id="left"
+        style="float: left; margin-top: 20px; margin-left: 20px; margin-right: 20px; border-color: rgb(224, 224, 224);"
+        frameborder="0" width="200" onload="changeFrameHeight()"></iframe>
+<div class="main-content" id="content">
+    <div style="padding: 5px;">
+        <p style="margin: 10px 20px;"><span style="font-size: 20px;color: rgb(112, 112, 112);">区块链系统-智能合约</span></p>
+        <hr>
+    </div>
+    <p style="font-size: 16px; font-weight: 700; margin-left: 50px;">合约列表</p>
+    <div class="row">
+        <div class="col-md-3 col-lg-offset-1">合约名称</div>
+        <div class="col-md-6">合约描述</div>
+    </div>
+    <hr style="width: 90%; margin-left: 5%;">
+    <div class="row">
+        <div class="col-md-3 col-lg-offset-1">存证</div>
+    </div>
+    <hr style="width: 90%; margin-left: 5%;">
+</div>
+</body>
+</html>

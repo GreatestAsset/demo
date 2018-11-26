@@ -35,7 +35,7 @@
             changeFrameHeight();
         };
         window.onload = function(){
-            var dom = document.getElementById('left').contentWindow.document.getElementById('clearLog');
+            var dom = document.getElementById('left').contentWindow.document.getElementById('allot');
             dom.style.background = 'rgb(245, 93, 84)';
         };
     </script>
@@ -47,7 +47,7 @@
         frameborder="0" width="200" onload="changeFrameHeight()"></iframe>
 <div class="main-content" id="content">
     <div style="padding: 5px;">
-        <p style="margin: 10px 20px;"><span style="font-size: 20px;color: rgb(112, 112, 112);">清分日志</span></p>
+        <p style="margin: 10px 20px;"><span style="font-size: 20px;color: rgb(112, 112, 112);">行内现金调拨</span></p>
         <span style="font-weight: 700; margin-left: 30px; font-size: 18px;">辖内所有银行</span>
         <select class="form-control" style="width: 350px; display: inline; height: 26px; margin-left: 20%;">
             <option></option>
@@ -66,17 +66,17 @@
         </div>
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-offset-1 col-md-3 today-one">
-                <p style="font-size: 20px;"><span>完整卷总金额</span></p>
+                <p style="font-size: 20px;"><span>调入</span></p>
                 <p style="margin-top: 30px; margin-left: 20px; font-size: 30px;"><span>1000</span></p>
             </div>
 
             <div class="col-md-4 today-one">
-                <p style="font-size: 20px;"><span>残损卷总金额</span></p>
-                <p style="margin-top: 30px; margin-left: 20px; font-size: 30px;"><span>1000</span></p>
+                <p style="font-size: 20px;"><span>调出</span></p>
+                <p style="margin-top: 30px; margin-left: 20px; font-size: 30px;"><span>900</span></p>
             </div>
             <div class="col-md-3">
-                <p style="font-size: 20px;"><span>其他卷总金额</span></p>
-                <p style="margin-top: 30px; margin-left: 20px; font-size: 30px;"><span>1</span></p>
+                <p style="font-size: 20px;"><span>净收入</span></p>
+                <p style="margin-top: 30px; margin-left: 20px; font-size: 30px;"><span>100</span></p>
             </div>
         </div>
     </div>
@@ -111,7 +111,7 @@
             <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
                 <span style="font-size: 18px;">2017年3月18日至2017年4月18</span>
                 <span style="font-size: 17px; margin-left: 130px;">
-                    <span>双击列表项可查看明细</span>
+                    <span></span>
                 </span>
                 <span style="float:right; margin-right: 40px;">
                     <a  style="font-size: 17px;">导出表格</a>
@@ -124,9 +124,9 @@
         <table class="table" style="text-align: center;">
             <tr class="clear-log-table-hight">
                 <td>时间</td>
-                <td>流通总额</td>
-                <td>残损总额</td>
-                <td>其他总额</td>
+                <td>调入</td>
+                <td>调出</td>
+                <td>净收入</td>
                 <td></td>
             </tr>
             <tr class="clear-log-table-hight">

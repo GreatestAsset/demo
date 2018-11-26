@@ -28,40 +28,43 @@
 <body style="background: rgb(247, 247, 247);">
 <div id="menu">
     <ul>
-        <li style="padding-left: 47px; padding-top: 10px"><span class="icon fa fa-pie-chart"
-                                                                style="font-size: 20px;"></span><span> 业务统计</span></li>
-        <li class="menu-ch clearLog" id="clearLog"><span>清分日志</span></li>
-        <li class="menu-ch"><span>柜面收支</span></li>
-        <li class="menu-ch"><span>自助收支</span></li>
-        <li class="menu-ch"><span>现金调拨</span></li>
+        <li style="padding-left: 47px; padding-top: 10px"><span class="icon fa fa-pie-chart" style="font-size: 20px;"></span><span> 业务统计</span></li>
+        <li class="menu-ch" id="clearLog"><span onclick="goPage('./clearLog.html')">清分日志</span></li>
+        <li class="menu-ch" id="counterBalance"><span onclick="goPage('./counterBalance.html')">柜面收支</span></li>
+        <li class="menu-ch" id="expenditure"><span onclick="goPage('./expenditure.html')">自助收支</span></li>
+        <li class="menu-ch" id="allot"><span onclick="goPage('./allot.html')">现金调拨</span></li>
     </ul>
     <hr class="menu-hr"/>
     <ul>
         <li style="padding-left: 47px;"><span class="icon fa fa-search"
                                               style="font-size: 20px;"></span><span> 监管查询</span></li>
-        <li class="menu-ch"><span>坐支分析</span></li>
-        <li class="menu-ch"><span>全额清分</span></li>
-        <li class="menu-ch"><span>可疑账户</span></li>
-        <li class="menu-ch"><span>冠号跟踪</span></li>
+        <li class="menu-ch" id="setUpExpenditure"><span onclick="goPage('./setUpExpenditure.html')">坐支分析</span></li>
+        <li class="menu-ch" id="sum"><span onclick="goPage('./sum.html')">全额清分</span></li>
+        <li class="menu-ch" id="suspicious"><span onclick="goPage('./suspicious.html')">可疑账户</span></li>
+        <li class="menu-ch" id="crown"><span onclick="goPage('./crown.html')">冠号跟踪</span></li>
     </ul>
     <hr class="menu-hr"/>
     <ul>
         <li style="padding-left: 47px;"><span class="icon fa fa-link"
                                               style="font-size: 20px;"></span><span> 区块链系统</span>
         </li>
-        <li class="menu-ch"><span>系统状态</span></li>
-        <li class="menu-ch"><span>区块信息</span></li>
-        <li class="menu-ch"><span>智能合约</span></li>
+        <li class="menu-ch" id="systemInfo"><span onclick="goPage('./systemInfo.html')">系统状态</span></li>
+        <li class="menu-ch" id="blockInfo"><span onclick="goPage('./blockInfo.html')">区块信息</span></li>
+        <li class="menu-ch" id="contract"><span onclick="goPage('./contract.html')">智能合约</span></li>
     </ul>
     <hr class="menu-hr"/>
     <ul>
         <li style="padding-left: 47px;"><span class="icon fa fa-folder"
                                               style="font-size: 20px;"></span><span> IPFS文件系统</span></li>
-        <li class="menu-ch"><span>系统状态</span></li>
-        <li class="menu-ch"><span>文件信息</span></li>
+        <li class="menu-ch" id="ipfsSystemInfo"><span onclick="goPage('./ipfsSystemInfo.html')">系统状态</span></li>
+        <li class="menu-ch" id="fileInfo"><span onclick="goPage('./fileInfo.html')">文件信息</span></li>
     </ul>
 
 </div>
-
+<script>
+    function goPage(url) {
+        window.parent.location.href = url;
+    }
+</script>
 </body>
 </html>

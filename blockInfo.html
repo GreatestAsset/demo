@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>穿透式现金监管平台</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <script rel="script" src="script/jquery-3.3.1.min.js" type="application/javascript"></script>
+    <script src="script/echarts.js"></script>
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        .today-one:before {
+            content: "";
+            height: 90px;
+            width: 1px;
+            border: 0.3px rgb(224, 224, 224) solid;
+            float: right;
+            position: relative;
+            right: 60px;
+        /*}*/
+    </style>
+    <script type="application/javascript">
+        // iframe大小自动适应
+        function changeFrameHeight() {
+            let ifm = document.getElementById("left");
+            ifm.height = document.documentElement.clientHeight - 120;
+            document.getElementById('content').style.height = ifm.height + 'px';
+        }
+
+        window.onresize = function () {
+            changeFrameHeight();
+        };
+        window.onload = function () {
+            var dom = document.getElementById('left').contentWindow.document.getElementById('blockInfo');
+            dom.style.background = 'rgb(245, 93, 84)';
+        };
+    </script>
+</head>
+<body style="background:#f2f1f4">
+<iframe src="top.html" width="100%" height="80px" scrolling="none" frameborder="none"></iframe>
+<iframe src="left.html" id="left"
+        style="float: left; margin-top: 20px; margin-left: 20px; margin-right: 20px; border-color: rgb(224, 224, 224);"
+        frameborder="0" width="200" onload="changeFrameHeight()"></iframe>
+<div class="main-content" id="content">
+    <div style="padding: 5px;">
+        <p style="margin: 10px 20px;"><span style="font-size: 20px;color: rgb(112, 112, 112);">区块链系统-区块信息</span></p>
+        <hr>
+    </div>
+    <div class="block-main" style="border: 0; height: 156px;">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">区块总览</span>
+                <span class="icon fa fa-info-circle" style="font-size: 24px;float:right; margin-right: 40px;"></span>
+                <span style="font-size: 17px; margin-left: 130px;">
+                    <span></span>
+                </span>
+            </div>
+        </div>
+        <div>
+            <p style="margin: 20px 80px 20px 80px;"><span
+                    style="font-weight: 700; font-size: 16px; margin-right: 60px;">区块总数:</span> <span>20</span></p>
+            <p style="margin: 10px 80px 20px 80px;"><span
+                    style="font-weight: 700; font-size: 16px; margin-right: 60px;">交易总数:</span> <span>100</span></p>
+        </div>
+    </div>
+
+    <div class="block-main" style="border: 0; height: 250px;">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%; ">
+                <span style="font-size: 18px;">区块遍历</span>
+                <span class="icon fa fa-info-circle" style="font-size: 24px;float:right; margin-right: 40px;"></span>
+                <span style="font-size: 17px; margin-left: 130px;">
+                    <span>
+            <span class="icon ci ci-yql-triangle-right" style="font-size: 24px;"></span></span>
+                </span>
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <div id="test" style="border: 0.5px black solid; height: 100px; width: 200px; text-align: center; float: left;margin-top: 16px; margin-left: 100px;">
+                <p style="line-height: 100px; font-size: 20px; font-weight: 400">14</p>
+                <span class="icon fa fa-chevron-circle-left" style="font-size: 24px;"></span>
+            </div>
+            <div style="border: 0.5px black solid; height: 140px; width: 250px; text-align: center; float: left; margin-left: 100px; background: rgb(251, 231, 230)">
+                <p style="line-height: 140px; font-size: 28px; font-weight: 400">15</p>
+            </div>
+            <div style="border: 0.5px black solid; height: 100px; width: 200px; text-align: center; float: left;margin-top: 16px; margin-left: 100px;">
+                <p style="line-height: 100px; font-size: 20px; font-weight: 400">16</p>
+                <span class="icon fa fa-chevron-circle-right" style="font-size: 24px;"></span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p style="font-size:16px; font-weight: 700; margin-left: 120px;">头部信息</p>
+    <hr style="width: 90%; margin-left: 5%">
+    <p style="margin-left: 11%">
+        <span style="margin-right: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HASH:</span>
+        <span>12312312312312</span>
+    </p>
+    <p style="margin-left: 11%">
+        <span style="margin-right: 30px;">前向HASH:</span>
+        <span>12312312312312</span>
+    </p>
+    <p style="font-size:16px; font-weight: 700; margin-left: 120px; margin-top: 130px;">交易列表</p>
+    <hr style="width: 90%; margin-left: 5%">
+    <div class="row">
+        <div class="col-md-3 col-lg-offset-1">交易时间</div>
+        <div class="col-md-4">交易类型</div>
+        <div class="col-md-4">交易金额</div>
+    </div>
+    <hr style="width: 90%; margin-left: 5%">
+</div>
+</body>
+</html>
