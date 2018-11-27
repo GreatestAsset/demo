@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>穿透式现金监管平台</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <script rel="script" src="script/jquery-3.3.1.min.js" type="application/javascript"></script>
+    <script src="script/echarts.js"></script>
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+
+        .today-one:before {
+            content: "";
+            height: 90px;
+            width: 1px;
+            border: 0.3px rgb(224, 224, 224) solid;
+            float: right;
+            position: relative;
+            right: 60px;
+        }
+    </style>
+    <script type="application/javascript">
+        // iframe大小自动适应
+        function changeFrameHeight() {
+            let ifm = document.getElementById("left");
+            ifm.height = document.documentElement.clientHeight - 120;
+            document.getElementById('content').style.height = ifm.height + 'px';
+        }
+        window.onresize = function () {
+            changeFrameHeight();
+        };
+        window.onload = function(){
+            var dom = document.getElementById('left').contentWindow.document.getElementById('allot');
+            dom.style.background = 'rgb(245, 93, 84)';
+        };
+    </script>
+</head>
+<body style="background:#f2f1f4">
+<iframe src="top.html" width="100%" height="80px" scrolling="none" frameborder="none"></iframe>
+<iframe src="left.html" id="left"
+        style="float: left; margin-top: 20px; margin-left: 20px; margin-right: 20px; border-color: rgb(224, 224, 224);"
+        frameborder="0" width="200" onload="changeFrameHeight()"></iframe>
+<div class="main-content" id="content">
+    <div style="padding: 5px;">
+        <p style="margin: 10px 20px;"><span style="font-size: 20px;color: rgb(112, 112, 112);">行间调拨 / 明细</span></p>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <span style="font-weight: 700; margin-left: 30px; font-size: 18px;">选择日期</span>
+                <select class="form-control" style="width: 350px; display: inline; height: 26px; margin-left: 20%;">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <span style="font-weight: 700; margin-left: 30px; font-size: 18px;">选择银行</span>
+                <select class="form-control" style="width: 350px; display: inline; height: 26px; margin-left: 20%;">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="block-main" style="height: 400px;">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">调拨总揽</span>
+                <span class="icon fa fa-chevron-circle-up" style="font-size: 24px;float:right; margin-right: 40px;"></span>
+            </div>
+        </div>
+        <div style="width: 100%;">
+            <div id="main" style="width: 100%;height:350px;"></div>
+        </div>
+
+    </div>
+    <div class="block-main" style="height: 78px;">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">按面值</span>
+                <span class="icon fa fa-chevron-circle-up" style="font-size: 24px;float:right; margin-right: 40px;"></span>
+            </div>
+        </div>
+    </div>
+    <div class="block-main" style="height: 78px;">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">按版别</span>
+                <span class="icon fa fa-chevron-circle-up" style="font-size: 24px;float:right; margin-right: 40px;"></span>
+            </div>
+        </div>
+    </div>
+    <div class="block-main" style="height: 178px;">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">调入排行</span>
+                <span class="icon fa fa-chevron-circle-up" style="font-size: 24px;float:right; margin-right: 40px;"></span>
+            </div>
+        </div>
+    </div>
+    <div class="block-main" style="height: 78px;">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">调出排行</span>
+                <span class="icon fa fa-chevron-circle-up" style="font-size: 24px;float:right; margin-right: 40px;"></span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="application/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    // app.title = '环形图';
+
+    option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            show: false,
+            orient: 'vertical',
+            x: 'left',
+            data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+        },
+        series: [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:335, name:'直接访问'},
+                    {value:310, name:'邮件营销'},
+                    {value:234, name:'联盟广告'},
+                    {value:135, name:'视频广告'},
+                    {value:1548, name:'搜索引擎'}
+                ]
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+
+
+    function goPage(url) {
+        window.parent.location.href = url;
+    }
+</script>
+</html>

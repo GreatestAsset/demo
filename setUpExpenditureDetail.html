@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>穿透式现金监管平台</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <script rel="script" src="script/jquery-3.3.1.min.js" type="application/javascript"></script>
+    <script src="script/echarts.js"></script>
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+
+        .today-one:before {
+            content: "";
+            height: 90px;
+            width: 1px;
+            border: 0.3px rgb(224, 224, 224) solid;
+            float: right;
+            position: relative;
+            right: 60px;
+        }
+    </style>
+    <script type="application/javascript">
+        // iframe大小自动适应
+        function changeFrameHeight() {
+            let ifm = document.getElementById("left");
+            ifm.height = document.documentElement.clientHeight - 120;
+            document.getElementById('content').style.height = ifm.height + 'px';
+        }
+        window.onresize = function () {
+            changeFrameHeight();
+        };
+        window.onload = function(){
+            var dom = document.getElementById('left').contentWindow.document.getElementById('setUpExpenditure');
+            dom.style.background = 'rgb(245, 93, 84)';
+        };
+    </script>
+</head>
+<body style="background:#f2f1f4">
+<iframe src="top.html" width="100%" height="80px" scrolling="none" frameborder="none"></iframe>
+<iframe src="left.html" id="left"
+        style="float: left; margin-top: 20px; margin-left: 20px; margin-right: 20px; border-color: rgb(224, 224, 224);"
+        frameborder="0" width="200" onload="changeFrameHeight()"></iframe>
+<div class="main-content" id="content">
+    <div style="padding: 5px;">
+        <p style="margin: 10px 20px;"><span style="font-size: 20px;color: rgb(112, 112, 112);">坐支分析 / 明细</span></p>
+        <hr>
+        <h1>坐支银行列表</h1>
+    </div>
+    <div class="block-main" style="height: 400px;">
+        <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
+            <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
+                <span style="font-size: 18px;">2017年3月18日</span>
+                <span class="icon fa fa-caret-down" style="font-size: 24px;"></span>
+                <span style="font-size: 17px; margin-left: 130px;">
+                    <span></span>
+                </span>
+                <span style="float:right; margin-right: 40px;">
+                    <a  style="font-size: 17px;">导出表格</a>
+                </span>
+                <span style="float:right; margin-right: 40px;">
+                    <a style="font-size: 17px;">打印表格</a>
+                </span>
+            </div>
+        </div>
+        <table class="table" style="text-align: center;">
+            <tr class="clear-log-table-hight">
+                <td>序号</td>
+                <td>银行名称</td>
+                <td>坐支金额</td>
+            </tr>
+            <tr class="clear-log-table-hight">
+                <td>1</td>
+                <td>南京银行</td>
+                <td>10</td>
+            </tr>
+            <tr class="clear-log-table-hight">
+                <td>2</td>
+                <td>北京银行</td>
+                <td>12</td>
+            </tr>
+            <tr class="clear-log-table-hight">
+                <td>3</td>
+                <td>宁波银行</td>
+                <td>12</td>
+            </tr>
+        </table>
+        <div style="float: right; margin-right: 31px">
+            <span class="icon fa fa-caret-left" style="font-size: 24px;"></span>
+            <span style=" font-size: 24px;margin: 0 20px;">2/10</span>
+            <span class="icon fa fa-caret-right" style="font-size: 24px;"></span>
+            <input type="text" class="form-control" style="width: 76px; display: inline;margin: 0 20px; font-size: 10px;" placeholder="输入页码">
+            <input class="btn btn-default" type="button" value="跳至">
+        </div>
+
+
+    </div>
+</div>
+</body>
+<script type="application/javascript">
+
+    function goPage(url) {
+        window.parent.location.href = url;
+    }
+</script>
+</html>

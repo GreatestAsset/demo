@@ -133,13 +133,13 @@
                 <td>2017-03-30</td>
                 <td>1000</td>
                 <td>10</td>
-                <td align="right" style="padding-right: 30px;"><input class="btn btn-default" type="button" value="明细"></td>
+                <td align="right" style="padding-right: 30px;"><input class="btn btn-default" type="button" value="明细" onclick="goPage('setUpExpenditureDetail.html')"></td>
             </tr>
             <tr class="clear-log-table-hight">
                 <td>2017-03-30</td>
                 <td>1000</td>
                 <td>10</td>
-                <td align="right" style="padding-right: 30px;"><input class="btn btn-default" type="button" value="明细"></td>
+                <td align="right" style="padding-right: 30px;"><input class="btn btn-default" type="button" value="明细" onclick="goPage('setUpExpenditureDetail.html')"></td>
             </tr>
         </table>
         <div style="float: right; margin-right: 31px">
@@ -176,5 +176,8 @@
 
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
+    function goPage(url) {
+        window.parent.location.href = url;
+    }
 </script>
 </html>

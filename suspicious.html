@@ -110,7 +110,7 @@
     <div class="block-main">
         <div style="width: 100%; height: 78px; background: rgb(224, 224, 224)">
             <div style="position: relative; top: 23px; left: 20px;  height: 100%;">
-                <span style="font-size: 18px;">2017年3月18日至2017年4月18</span>
+                <span style="font-size: 18px;">2017年3月18日</span>
                 <span style="font-size: 17px; margin-left: 130px;">
                     <span>双击列表项可查看明细</span>
                 </span>
@@ -127,19 +127,16 @@
                 <td>时间</td>
                 <td>可疑交易金额</td>
                 <td>可疑账户数量</td>
-                <td></td>
             </tr>
-            <tr class="clear-log-table-hight">
+            <tr class="clear-log-table-hight" ondblclick="goPage('suspiciousDetail.html')">
                 <td>2017-03-30</td>
                 <td>1000</td>
                 <td>10</td>
-                <td align="right" style="padding-right: 30px;"><input class="btn btn-default" type="button" value="明细"></td>
             </tr>
-            <tr class="clear-log-table-hight">
+            <tr class="clear-log-table-hight" ondblclick="goPage('suspiciousDetail.html')">
                 <td>2017-03-30</td>
                 <td>1000</td>
                 <td>10</td>
-                <td align="right" style="padding-right: 30px;"><input class="btn btn-default" type="button" value="明细"></td>
             </tr>
         </table>
         <div style="float: right; margin-right: 31px">
@@ -176,5 +173,8 @@
 
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
+    function goPage(url) {
+        window.parent.location.href = url;
+    }
 </script>
 </html>
